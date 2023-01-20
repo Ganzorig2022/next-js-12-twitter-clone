@@ -35,18 +35,18 @@ npm i@next-auth/mongodb-adapter mongodb
 3.  Configuring Google OAuth
     https://console.cloud.google.com/apis/credentials
 
-3.1) Create New Project --> neree ogno.
-3.2) Create Credentials --> OAuth cliend ID-g songono.
-3.3) Configure Consent Screen --> dr daraad --> External --> Create dr darna.
-3.4) App name --> neree ogno.
-3.5) User support email --> mail-ee oruulna --> Save and continue
-3.6) Scopes --> .../auth/userinfo.email, .../auth/userinfo.profile 2-g chagtlana. --> Update --> Save and Continue
-3.7) Test users --> Save and Continue
-3.8) Create Credentials --> OAuth cliend ID-g songono.
-3.9) Application type --> Web application songono.
-3.10) Authorised redirect URIs --> http://localhost:3000, https://next-auth.js.org/providers/google ene 2-iig oruulna.
-3.11) Client ID, Client secret 2-oo awaad env dre huulna.
-3.12) http://localhost:3000/api/auth/signin ene linkeer orhod Google erheere newterdeg bolno.
+3.1) Create New Project --> neree ogno.\
+3.2) Create Credentials --> OAuth cliend ID-g songono.\
+3.3) Configure Consent Screen --> dr daraad --> External --> Create dr darna.\
+3.4) App name --> neree ogno.\
+3.5) User support email --> mail-ee oruulna --> Save and continue\
+3.6) Scopes --> .../auth/userinfo.email, .../auth/userinfo.profile 2-g chagtlana. --> Update --> Save and Continue\
+3.7) Test users --> Save and Continue\
+3.8) Create Credentials --> OAuth cliend ID-g songono.\
+3.9) Application type --> Web application songono.\
+3.10) Authorised redirect URIs --> http://localhost:3000, https://next-auth.js.org/providers/google ene 2-iig oruulna.\
+3.11) Client ID, Client secret 2-oo awaad env dre huulna.\
+3.12) http://localhost:3000/api/auth/signin ene linkeer orhod Google erheere newterdeg bolno.\
 
 ##
 
