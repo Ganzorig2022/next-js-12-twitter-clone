@@ -19,3 +19,15 @@ session: {strategy:'jwt' as const } gej zasaw.
 "/lib/mongodb.ts" dotor "global.\_mongoClientPromise" aldaa zaawal...doorh linkeer...
 
 https://stackoverflow.com/questions/70766870/next-js-with-mongodb-convert-to-typescript
+
+## 4 - next-auth JWEDecryptionFailed
+
+Terminal dr iim aldaa garwal
+https://next-auth.js.org/configuration/options
+
+1. env dr NEXTAUTH_SECRET-ee oruulna.
+2. "/pages/api/auth/[...nextauth].ts" dotroo secret:process.env.NEXTAUTH_secret gej oruulj ogno.
+
+## 5 - React Time-ago date typescript error
+
+https://stackoverflow.com/questions/72503116/typescript-libraryreact-time-ago-thinks-it-requires-a-number-im-giving-it-a
