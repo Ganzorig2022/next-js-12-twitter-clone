@@ -18,7 +18,7 @@ npm install next-auth
 1.2) SessionProvider-oo WRAP hiine. "/pages/\_app.tsx" dotor.
 
 2. Installing adapters (for saving USER data to mongoDB when Google Login)
-   https://next-auth.js.org/adapters/mongodb
+   > https://next-auth.js.org/adapters/mongodb
 
 ```bash
 npm i@next-auth/mongodb-adapter mongodb
@@ -33,7 +33,7 @@ npm i@next-auth/mongodb-adapter mongodb
 2.7) https://next-auth.js.org/adapters/mongodb ene link dotroos "/pages/api/auth/[...nextauth].ts" dotor adapter huulna.\
 
 3.  Configuring Google OAuth
-    https://console.cloud.google.com/apis/credentials
+    > https://console.cloud.google.com/apis/credentials
 
 3.1) Create New Project --> neree ogno.\
 3.2) Create Credentials --> OAuth cliend ID-g songono.\
@@ -53,7 +53,7 @@ npm i@next-auth/mongodb-adapter mongodb
 1. "/pages/api/posts.ts" dotor shineer hereglegchiin bichsen TWEET TEXT-iig "/components/PostForm.tsx" dotroos "**POST**" request irehed **MongoDB** database-d hadgalah code-iig bichiw.
 2. "/models/Post.ts" dotor MongoDB-iin Post collection-ii **SCHEMA**-g bichne.
 
-## Getting data on the FRONT-END side
+## Preparing Back-End for FRONT-END
 
 https://next-auth.js.org/getting-started/typescript
 
@@ -62,13 +62,19 @@ https://next-auth.js.org/getting-started/typescript
 3. "lib/mongodb.ts" dr next-auth-iin Google OAuth-aar newtersen hereglegchiin medeelliig mongoDB dr hadgalahad shaardlagatai configure-iig hj ogow.
 4. "lib/mongoose.ts" dr mongoDB database-rvvgee holbogdono.
 5. "pages/login.tsx" dr next-auth-iin useSession()-eer newtersen hereglegchiin medeelliig barij awna.
-6.
+
+## Tweet Likes functionality (getting and updating likesCount on mongoDb)
+
+1. "/models/Like.ts" dr "Post, User" collection-toi holbono.
+2. "/models/Post.ts" dr hereglegchiin darsan like-nii toonii type-iig zaaj ogno.
+3. "/pages/api/like.ts" dr like-iin CRUD operation-ii logic-iig hiine.
+4. "/components/PostButtons.tsx" talaas "axios.get('/api/posts', {id}) API ruu postId-aar request yawuulna.
+5. "/pages/index.tsx" dotroos "likesCount, posts{}, idsLikedByMe" geh met props-iig "/components/PostContent.tsx" rvv damjuulna.
+6. "/components/PostContent.tsx" -oos "/components/PostButtons.tsx" ruu mun props-uud damjuulna.
 
 ## DYNAMIC ROUTING
 
-http://localhost:3000/[username]/status/[id]
-
-1.
+> http://localhost:3000/[username]/status/[id]
 
 ## Tailwind Theme Customizing
 

@@ -10,7 +10,7 @@ type UserInfos = {
 
 export default function useUserInfo() {
   const { data: session, status: sessionStatus } = useSession();
-  const [userInfo, setUserInfo] = useState<UserInfos>();
+  const [userInfo, setUserInfo] = useState<UserInfos | null>();
   const [status, setStatus] = useState('loading');
 
   function getUserInfo() {
@@ -23,7 +23,11 @@ export default function useUserInfo() {
       return;
     }
 
-    console.log('fetch1');
+    if (!session?.user?.id) {
+      setStatus('unauthenticated');
+      return;
+    }
+
     fetch(`/api/users?id=${session?.user.id}`).then((response) => {
       response.json().then((json) => {
         setUserInfo(json.user);
