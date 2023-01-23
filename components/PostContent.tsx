@@ -13,6 +13,7 @@ type Props = {
   big: boolean;
   likesCount: number;
   likedByMe: boolean;
+  commentsCount: number;
 };
 
 const PostContent = ({
@@ -23,6 +24,7 @@ const PostContent = ({
   likesCount,
   big,
   likedByMe,
+  commentsCount,
 }: Props) => {
   return (
     <div>
@@ -46,22 +48,25 @@ const PostContent = ({
             )}
           </div>
 
+          {/* on home page*/}
           {!big && (
             <div>
               {/* http://localhost:3000/ganzogalaxy/status/63cbf64e1a85dca9902bc386 ene URL rvv vserne. */}
               <Link href={`/${author.username}/status/${_id}`}>
-                <div className='w-full cursor-pointer'>{text}</div>
+                <div className='w-full cursor-pointer text-white'>{text}</div>
               </Link>
               <PostButtons
                 likesCount={likesCount}
                 likedByMe={likedByMe}
                 id={_id}
+                commentsCount={commentsCount}
               />
             </div>
           )}
         </div>
       </div>
 
+      {/* on "localhost:3000/[username]/status/[id]" page */}
       {big && (
         <div className='mt-2'>
           {/* http://localhost:3000/ganzogalaxy/status/63cbf64e1a85dca9902bc386 ene URL rvv vserne. */}
@@ -83,7 +88,12 @@ const PostContent = ({
                 .join(' ')}
             </div>
           )}
-          <PostButtons likesCount={likesCount} likedByMe={likedByMe} id={_id} />
+          <PostButtons
+            id={_id}
+            likesCount={likesCount}
+            likedByMe={likedByMe}
+            commentsCount={commentsCount}
+          />
         </div>
       )}
     </div>

@@ -12,12 +12,15 @@ type Props = {
   id: string;
   likesCount: number;
   likedByMe: boolean;
+  commentsCount: number;
 };
 
+// LIKE - COMMENT - SHARE buttons
 const PostButtons = ({
   id,
   likesCount: likesCountDefault = 0,
   likedByMe: likedByMeDefault = false,
+  commentsCount,
 }: Props) => {
   const [likesCount, setLikesCount] = useState(likesCountDefault);
   const [likedByMe, setLikedByMe] = useState<boolean>(likedByMeDefault);
@@ -38,9 +41,9 @@ const PostButtons = ({
 
   return (
     <div className='flex justify-between mr-12 text-twitterLightGray text-sm mt-1'>
-      <button className='flex '>
+      <button className='flex'>
         <ChatBubbleLeftIcon className='w-5 h-5 mr-1' />
-        <span>0</span>
+        <span>{commentsCount}</span>
       </button>
       <button className='flex '>
         <ArrowPathIcon className='w-5 h-5 mr-1' />

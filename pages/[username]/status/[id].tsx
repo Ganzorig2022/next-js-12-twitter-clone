@@ -15,6 +15,7 @@ type Post = {
   _id: string;
   createdAt: string;
   likesCount: number;
+  commentsCount: number;
 };
 
 const PostPage = () => {
@@ -25,12 +26,7 @@ const PostPage = () => {
   const [repliedPosts, setRepliedPosts] = useState<Post[]>([]);
   const [repliesLikedByMe, setRepliesLikedByMe] = useState<string[]>([]);
 
-  // Requesting for getting post data from mongoDB
-  useEffect(() => {
-    if (!id) {
-      return;
-    }
-
+  const fetchData = () => {
     //1) GETting INITAL post ("/components/PostContent.tsx") when click the one of the posts.
     axios.get(`/api/posts?id=${id}`).then((res) => {
       setPost(res.data);
@@ -38,10 +34,17 @@ const PostPage = () => {
 
     //2) GETting REPLIED post
     axios.get(`/api/posts?parent=${id}`).then((res) => {
-      console.log(res.data);
       setRepliedPosts(res.data.posts);
       setRepliesLikedByMe(res.data.idsLikedByMe);
     });
+  };
+
+  // Requesting for getting post data from mongoDB
+  useEffect(() => {
+    if (!id) {
+      return;
+    }
+    fetchData();
   }, [id]);
 
   return (
@@ -59,7 +62,7 @@ const PostPage = () => {
       {!!userInfo && (
         <div className='border-t border-twitterBorder py-5 '>
           <PostForm
-            onPost={() => {}}
+            onPost={fetchData}
             parent={id}
             compact
             placeholder='Tweet your reply'
@@ -68,7 +71,7 @@ const PostPage = () => {
       )}
 
       {/* REPLIED POST here */}
-      <div className='border-t border-twitterBorder text-white'>
+      <div className=''>
         {repliedPosts.length > 0 &&
           repliedPosts.map((repliedPost) => (
             <div

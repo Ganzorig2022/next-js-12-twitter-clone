@@ -7,6 +7,7 @@ const PostSchema = new Schema(
     author: { type: mongoose.Types.ObjectId, ref: 'User' },
     text: String,
     likesCount: { type: Number, default: 0 },
+    commentsCount: { type: Number, default: 0 },
     // hunii post-dr REPLY hj post nemehed henii poston dr we gedgiig todruulahin tuld...
     parent: { type: mongoose.Types.ObjectId, ref: 'Post' },
   },

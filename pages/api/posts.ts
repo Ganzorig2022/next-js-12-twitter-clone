@@ -24,6 +24,7 @@ export default async function handler(
     } else {
       const parent = req.query.parent || null;
       // getting all post data for HOME page
+      // if parent has id, then filter posts with "parent" field.
       const posts = await Post.find({ parent })
         .populate('author') // "/models/Post.ts" dotor "author" dotor "ref:'User" gej ogson uchraas 2 collection hoorondoo holbogdson. Populate()-eer "User"-iin "email, pass, image, name" geh met data orj irne.
         .limit(20)
@@ -47,6 +48,14 @@ export default async function handler(
 
     const post = await Post.create({ author: session?.user.id, text, parent });
 
+    // check if how many comments are counted on specific post, then save it to mongoDB
+    if (parent) {
+      const parentPost = await Post.findById(parent);
+      parentPost.commentsCount = await Post.countDocuments({ parent });
+      await parentPost.save();
+    }
     res.status(200).json(post);
   }
 }
+
+// 2:51 dr duusaw
