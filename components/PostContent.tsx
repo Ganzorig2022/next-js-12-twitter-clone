@@ -35,7 +35,12 @@ const PostContent = ({
             // go to PROFILE page
             <Link href={`/${author.username}`}>
               <div className='cursor-pointer'>
-                <Avatar src={author.image} />
+                <Avatar
+                  big={false}
+                  src={author.image}
+                  onChange={() => {}}
+                  editable={false}
+                />
               </div>
             </Link>
           )}

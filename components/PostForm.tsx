@@ -35,7 +35,12 @@ const PostForm = ({ onPost, compact, parent, placeholder }: Props) => {
     <form className='mx-5' onSubmit={handlePostSubmit}>
       <div className={`flex ${compact ? 'items-center' : ''}`}>
         <div className=''>
-          <Avatar src={userInfo?.image} />
+          <Avatar
+            src={userInfo?.image}
+            big={false}
+            editable={false}
+            onChange={() => {}}
+          />
         </div>
         <div className='grow pl-4'>
           <textarea

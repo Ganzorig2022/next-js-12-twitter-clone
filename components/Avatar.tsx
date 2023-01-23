@@ -1,13 +1,16 @@
 import EditableImage from './EditableImage';
 
 type Props = {
-  src: string;
+  src?: string;
   big: boolean;
   onChange: (src: string) => void;
   editable: boolean;
 };
 
-//imported from "/pages/[username].tsx"
+//imported from 3 components:
+//  "/pages/[username].tsx",
+//  "/components/PostContent.tsx",
+//  "/components/PostForm.tsx"
 const Avatar = ({ src, big, onChange, editable = false }: Props) => {
   const widthClass = big ? 'w-24' : 'w-12';
 
