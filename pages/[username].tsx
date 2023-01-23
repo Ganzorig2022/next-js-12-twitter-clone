@@ -16,6 +16,7 @@ const UserPage = (props: Props) => {
   const [posts, setPosts] = useState<Posts[]>([]);
   const [postsLikedByMe, setPostsLikedByMe] = useState<string[]>([]);
 
+  //1) Getting USER data for profile page
   useEffect(() => {
     if (!username) {
       return;
@@ -26,6 +27,7 @@ const UserPage = (props: Props) => {
       .then((res) => setProfileInfo(res.data.user));
   }, [username]);
 
+  //2) GETting posts for profile page
   useEffect(() => {
     if (!profileInfo?._id) {
       return;
@@ -37,6 +39,10 @@ const UserPage = (props: Props) => {
     });
   }, [profileInfo]);
 
+  const updateUserImage = (type: string, src: string) => {
+    setProfileInfo((prev): any => ({ ...prev, [type]: src }));
+  };
+
   return (
     <Layout>
       {!!profileInfo && (
@@ -45,12 +51,21 @@ const UserPage = (props: Props) => {
             <TopNavLink title={profileInfo.name} />
           </header>
 
-          <Cover />
+          <Cover
+            editable={true}
+            src={profileInfo.cover}
+            onChange={(src) => updateUserImage('cover', src)}
+          />
 
           <section className='flex justify-between'>
             <div className='ml-5 relative '>
-              <div className='absolute -top-12 border-4 rounded-full border-black'>
-                <Avatar src={profileInfo.image} big />
+              <div className='absolute -top-12 border-4 rounded-full border-black overflow-hidden'>
+                <Avatar
+                  big={true}
+                  src={profileInfo.image}
+                  editable={true}
+                  onChange={(src) => updateUserImage('image', src)}
+                />
               </div>
             </div>
             {/* follow button */}

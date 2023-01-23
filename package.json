@@ -8,18 +8,23 @@
   "dependencies": {
     "@heroicons/react": "^2.0.13",
     "@next-auth/mongodb-adapter": "^1.1.1",
+    "aws-sdk": "^2.1299.0",
     "axios": "^1.2.3",
     "javascript-time-ago": "^2.5.9",
     "mongodb": "^4.13.0",
     "mongoose": "^6.8.4",
+    "multiparty": "^4.2.3",
     "next": "latest",
     "next-auth": "^4.18.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-file-drop": "^3.1.6",
     "react-flip-numbers": "^3.0.7",
+    "react-spinners": "^0.13.8",
     "react-time-ago": "^7.2.1"
   },
   "devDependencies": {
+    "@types/multiparty": "^0.0.33",
     "@types/node": "18.11.3",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",

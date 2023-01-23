@@ -21,6 +21,7 @@ interface User {
   name: string;
   username: string;
   _id: string;
+  cover: string;
 }
 
 interface Posts {

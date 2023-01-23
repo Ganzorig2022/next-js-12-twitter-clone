@@ -84,14 +84,65 @@ https://next-auth.js.org/getting-started/typescript
 
 > http://localhost:3000/[username]/status/[id]
 
-## Tailwind Theme Customizing
+## DRAG & DROP IMAGE UPLOAD using 3rd party package
+
+> https://www.npmjs.com/package/react-file-drop
+
+```bash
+npm i react-file-drop
+```
+
+1. "/components/Cover.tsx" dr implement hiiw.
+2. "fetch('/api/upload') request yawuulna.
+3. "/pages/api/upload.ts" back-end-ee bichne.
+4. Installing multiparty package. File upload-iin request-iig back-end taldaa handle hiih zoriulalttai npm yum.
+
+```bash
+npm i --save-dev @types/multiparty
+```
+
+5. "/components/Cover.tsx" dotor image drag drop hiihed "/public" folder dotor hadgalagdana.
+6. SignUp to amazon web service.
+7. S3 service --> Create Bucket
+8. Block all public access --> Uncheck bolgono.
+9. Profile --> Security Credentials --> User --> Add users --> User name ogno.
+10. Set Permissions --> Attach policies directly --> bvgdiig chagtalna.
+11. Create Policy --> Any...
+12. Review Policy --> name ogno --> Create Policy dr darna
+13. S3_ACCESS_KEY, S3_SECRET_ACCESS_KEY 2-iig aws-ees awna.
+
+```bash
+npm install aws-sdk
+```
+
+14. "/pages/api/upload.ts" dotor "S3Client" uusgene.
+
+### Tailwind Theme Customizing
 
 https://tailwindcss.com/docs/theme
 
 1. Custom twitter colors added "/tailwind.config.js"
 2. "/pages/login.tsx" "bg-twitterWhite" geed custom color ogow.
 
-## Icon download
+### React Flip-numbers 3rd party package
+
+> https://www.npmjs.com/package/react-flip-numbers
+
+```bash
+npm i react-flip-numbers -S
+```
+
+1. "/components/PostButtons.tsx" "heartIcon" dr darhad like-nii too 1-eer nemegdehiig animation-tei haruuldag package.
+
+### React-spinners 3rd party package
+
+> https://www.npmjs.com/package/react-spinners
+
+```bash
+npm i --save react-spinners
+```
+
+### Icon download
 
 > https://www.iconfinder.com/icons/1298745/google_brand_branding_logo_network_icon
 

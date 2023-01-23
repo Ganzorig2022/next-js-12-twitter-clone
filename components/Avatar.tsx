@@ -1,15 +1,25 @@
-import React from 'react';
+import EditableImage from './EditableImage';
 
 type Props = {
-  src?: string;
-  big?: boolean;
+  src: string;
+  big: boolean;
+  onChange: (src: string) => void;
+  editable: boolean;
 };
 
-const Avatar = ({ src, big }: Props) => {
+//imported from "/pages/[username].tsx"
+const Avatar = ({ src, big, onChange, editable = false }: Props) => {
   const widthClass = big ? 'w-24' : 'w-12';
+
   return (
-    <div className={`rounded-full overflow-hidden ${widthClass}`}>
-      <img src={src} alt='avatar' />
+    <div className='rounded-full overflow-hidden'>
+      <EditableImage
+        type={'image'}
+        src={src}
+        onChange={onChange}
+        editable={editable}
+        className={`rounded-full overflow-hidden ${widthClass}`}
+      />
     </div>
   );
 };
