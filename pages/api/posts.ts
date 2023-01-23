@@ -26,12 +26,13 @@ export default async function handler(
     else {
       const parent = req.query.parent || null;
       const author = req.query.author;
-      const searchFilter = author ? { author } : { parent };
+      let searchFilter = author ? { author } : { parent };
+
       // if parent has id, then filter posts with "parent" field.
       const posts = await Post.find(searchFilter)
         .populate('author') // "/models/Post.ts" dotor "author" dotor "ref:'User" gej ogson uchraas 2 collection hoorondoo holbogdson. Populate()-eer "User"-iin "email, pass, image, name" geh met data orj irne.
-        .limit(20)
-        .sort({ createdAt: -1 }) //descending order
+        .sort({ createdAt: -1 })
+        .limit(20) //descending order
         .exec();
 
       //
@@ -40,7 +41,7 @@ export default async function handler(
         post: posts.map((post) => post._id),
       });
 
-      const idsLikedByMe = postLikedByMe.map((like) => like.post);
+      let idsLikedByMe = postLikedByMe.map((like) => like.post);
 
       res.json({ posts, idsLikedByMe });
     }

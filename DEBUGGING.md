@@ -31,3 +31,18 @@ https://next-auth.js.org/configuration/options
 ## 5 - React Time-ago date typescript error
 
 https://stackoverflow.com/questions/72503116/typescript-libraryreact-time-ago-thinks-it-requires-a-number-im-giving-it-a
+
+## 6 - Google OAuth2: Error 401 - invalid_client
+
+Herwee Vercel dr deploy-dood linkeeree deploydson linkeeree orood Google-eer newtreh gewel iim aldaa garwal
+
+> https://stackoverflow.com/questions/51179066/google-oauth2-error-401-invalid-client
+
+1. .env dr GOOGLE_CLIENT_ID-gee vercel dr buruu hsen bj boljoshgv...
+
+## 7 - Error 400: redirect_uri_mismatch
+
+> https://console.cloud.google.com/
+
+1. deerh linkeer orood Credentials-rvvgee orood --> Authorised redirect URIs dr "https://next-js-12-twitter-clone.vercel.app/api/auth/callback/google" ene URL-iig zow zaaj ogno.
+2.
