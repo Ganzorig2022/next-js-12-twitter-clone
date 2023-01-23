@@ -72,10 +72,13 @@ https://next-auth.js.org/getting-started/typescript
 5. "/pages/index.tsx" dotroos "likesCount, posts{}, idsLikedByMe" geh met props-iig "/components/PostContent.tsx" rvv damjuulna.
 6. "/components/PostContent.tsx" -oos "/components/PostButtons.tsx" ruu mun props-uud damjuulna.
 
-## USER PROFILE functionality
+## USER PROFILE PAGE functionality
 
 1. "/components/PostContent.tsx" buyu "http://localhost:3000/[username]/status/[id]" URL dr avatar dr darahad "http://localhost:3000/[username]/" buyu PRIOFILE page rvv vserne.
 2. "/pages/[username].tsx" dr develop-iig ni hiiw.
+3. "/pages/[username].tsx"-ees GET request
+4. "/pages/api/users.ts" GET request-iin username-eer mongoDB-ees data butsaana.
+5.
 
 ## DYNAMIC ROUTING
 

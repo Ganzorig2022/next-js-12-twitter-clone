@@ -8,9 +8,11 @@ type Props = {
 
 const TopNavLink = ({ title = 'Tweet', url = '/' }: Props) => {
   return (
-    <Link href={url} className='flex mb-2 text-white'>
-      <ArrowLeftIcon className='h-6 w-6' />
-      <span className='pl-2'>Tweet</span>
+    <Link href={url} className='text-white'>
+      <div className='flex mb-5 cursor-pointer'>
+        <ArrowLeftIcon className='h-6 w-6' />
+        <span className='pl-2'>{title}</span>
+      </div>
     </Link>
   );
 };

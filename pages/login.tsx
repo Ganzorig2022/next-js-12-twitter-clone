@@ -22,8 +22,8 @@ const Login = ({ providers }: Props) => {
         <div key={i}>
           <button
             className='bg-twitterWhite pl-3 pr-5 py-2 text-black rounded-full flex items-center'
-            onClick={async () => {
-              await signIn(provider.id);
+            onClick={() => {
+              signIn(provider.id);
             }}
           >
             <img src='/google.png' alt='' className='h-8' />

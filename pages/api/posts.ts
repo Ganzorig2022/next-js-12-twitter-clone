@@ -23,9 +23,11 @@ export default async function handler(
       res.json(post);
     } else {
       const parent = req.query.parent || null;
+      const author = req.query.author;
+      const searchFilter = author ? { author } : { parent };
       // getting all post data for HOME page
       // if parent has id, then filter posts with "parent" field.
-      const posts = await Post.find({ parent })
+      const posts = await Post.find(searchFilter)
         .populate('author') // "/models/Post.ts" dotor "author" dotor "ref:'User" gej ogson uchraas 2 collection hoorondoo holbogdson. Populate()-eer "User"-iin "email, pass, image, name" geh met data orj irne.
         .limit(20)
         .sort({ createdAt: -1 }) //descending order

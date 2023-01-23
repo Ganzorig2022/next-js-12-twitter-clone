@@ -5,6 +5,7 @@ import {
   ShareIcon,
 } from '@heroicons/react/24/outline';
 import axios from 'axios';
+import Link from 'next/link';
 import { useState } from 'react';
 import FlipNumbers from 'react-flip-numbers';
 
@@ -13,10 +14,12 @@ type Props = {
   likesCount: number;
   likedByMe: boolean;
   commentsCount: number;
+  username?: string;
 };
 
 // LIKE - COMMENT - SHARE buttons
 const PostButtons = ({
+  username,
   id,
   likesCount: likesCountDefault = 0,
   likedByMe: likedByMeDefault = false,
@@ -41,10 +44,11 @@ const PostButtons = ({
 
   return (
     <div className='flex justify-between mr-12 text-twitterLightGray text-sm mt-1'>
-      <button className='flex'>
+      {/* go to post page */}
+      <Link href={`/${username}/status/${id}`} className='flex cursor-pointer'>
         <ChatBubbleLeftIcon className='w-5 h-5 mr-1' />
         <span>{commentsCount}</span>
-      </button>
+      </Link>
       <button className='flex '>
         <ArrowPathIcon className='w-5 h-5 mr-1' />
         <span>0</span>

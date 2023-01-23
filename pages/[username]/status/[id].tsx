@@ -32,7 +32,6 @@ const PostPage = () => {
     axios.get(`/api/posts?id=${id}`).then((res) => {
       setPost(res.data);
     });
-
     //2) GETting REPLIED post
     axios.get(`/api/posts?parent=${id}`).then((res) => {
       setRepliedPosts(res.data.posts);

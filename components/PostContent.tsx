@@ -10,7 +10,7 @@ type Props = {
   __v: number;
   _id: string;
   createdAt: string;
-  big: boolean;
+  big?: boolean;
   likesCount: number;
   likedByMe: boolean;
   commentsCount: number;
@@ -74,6 +74,7 @@ const PostContent = ({
                 likedByMe={likedByMe}
                 id={_id}
                 commentsCount={commentsCount}
+                username={author.username}
               />
             </div>
           )}
