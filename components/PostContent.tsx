@@ -29,18 +29,31 @@ const PostContent = ({
   return (
     <div>
       <div className='flex w-full'>
+        {/*=========== AVATAR============= */}
         <div>
-          <Avatar src={author.image} />
+          {!!author?.image && (
+            // go to PROFILE page
+            <Link href={`/${author.username}`}>
+              <div className='cursor-pointer'>
+                <Avatar src={author.image} />
+              </div>
+            </Link>
+          )}
         </div>
+        {/* ==========Username, post========== */}
         <div className='pl-2 grow'>
           <div>
-            <span className='font-bold pr-1 cursor-pointer text-white'>
-              {author.name}
-            </span>
+            <Link href={`/${author.username}`}>
+              <span className='font-bold pr-1 cursor-pointer text-white'>
+                {author.name}
+              </span>
+            </Link>
             {big && <br />}
-            <span className='text-twitterLightGray cursor-pointer'>
-              @{author.username}
-            </span>
+            <Link href={`/${author.username}`}>
+              <span className='text-twitterLightGray cursor-pointer'>
+                @{author.username}
+              </span>
+            </Link>
             {createdAt && !big && (
               <span className='pl-1 text-twitterLightGray'>
                 <ReactTimeAgo date={new Date(createdAt)} timeStyle='twitter' />
@@ -48,6 +61,7 @@ const PostContent = ({
             )}
           </div>
 
+          {/*============== POST ============= */}
           {/* on home page*/}
           {!big && (
             <div>

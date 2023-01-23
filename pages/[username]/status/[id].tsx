@@ -7,6 +7,7 @@ import PostContent from '../../../components/PostContent';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 import useUserInfo from '../../../hooks/useUserInfo';
 import PostForm from '../../../components/PostForm';
+import TopNavLink from '../../../components/TopNavLink';
 
 type Post = {
   author: Author;
@@ -52,10 +53,7 @@ const PostPage = () => {
       {/* INITIAL POST here */}
       {!!post?._id && (
         <div className='px-5 py-2'>
-          <Link href='/' className='flex mb-2 text-white'>
-            <ArrowLeftIcon className='h-6 w-6' />
-            <span className='pl-2'>Tweet</span>
-          </Link>
+          <TopNavLink />
           <PostContent {...post} big={true} likedByMe={true} />
         </div>
       )}

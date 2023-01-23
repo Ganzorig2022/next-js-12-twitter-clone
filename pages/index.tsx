@@ -16,6 +16,7 @@ type Posts = {
   createdAt: string;
   updatedAt: string;
   likesCount: number;
+  commentsCount: number;
 };
 
 const Home = () => {
