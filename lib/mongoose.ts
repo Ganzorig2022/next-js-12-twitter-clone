@@ -8,6 +8,7 @@ export async function initMongoose() {
   // }
   // await mongoose.connect(process.env.MONGODB_URI);
   try {
+    mongoose.set('strictQuery', false);
     await mongoose.connect(process.env.MONGODB_URI!);
     console.log('mongoDB connection successful');
   } catch (error) {

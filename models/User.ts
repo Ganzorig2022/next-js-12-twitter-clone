@@ -1,4 +1,4 @@
-import { model, models, Schema } from 'mongoose';
+import mongoose, { model, models, Schema } from 'mongoose';
 
 //https://mongoosejs.com/docs/guide.html
 const UserSchema = new Schema({
@@ -10,6 +10,6 @@ const UserSchema = new Schema({
   cover: String,
 });
 
-const User = models?.User || model('User', UserSchema);
+const User = models?.User || mongoose.model('User', UserSchema);
 
 export default User;

@@ -46,3 +46,7 @@ Herwee Vercel dr deploy-dood linkeeree deploydson linkeeree orood Google-eer new
 
 1. deerh linkeer orood Credentials-rvvgee orood --> Authorised redirect URIs dr "https://next-js-12-twitter-clone.vercel.app/api/auth/callback/google" ene URL-iig zow zaaj ogno.
 2.
+
+## 8
+
+https://stackoverflow.com/questions/74747476/deprecationwarning-mongoose-the-strictquery-option-will-be-switched-back-to

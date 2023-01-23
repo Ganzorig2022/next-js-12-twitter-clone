@@ -13,6 +13,6 @@ const LikeSchema = new Schema(
   }
 );
 
-const Like = models?.Like || model('Like', LikeSchema);
+const Like = models?.Like || mongoose.model('Like', LikeSchema);
 
 export default Like;
