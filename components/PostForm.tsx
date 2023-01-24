@@ -4,13 +4,15 @@ import axios from 'axios';
 import Avatar from './Avatar';
 
 type Props = {
-  // onPost: () => {};
   onPost: () => void; //same as above
-  compact: boolean;
+  compact?: boolean;
   placeholder: string;
-  parent: string | string[] | undefined;
+  parent?: string | string[] | undefined;
 };
 
+// imported from 2 components below
+// "/pages/index.tsx"
+// "/pages/[username]/status/[id].tsx"
 const PostForm = ({ onPost, compact, parent, placeholder }: Props) => {
   const { userInfo, status } = useUserInfo();
   const [text, setText] = useState<string>();
@@ -23,6 +25,7 @@ const PostForm = ({ onPost, compact, parent, placeholder }: Props) => {
   const handlePostSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // If user replied to someone's post, then PARENT will have ID
     await axios.post('/api/posts', { text, parent });
     setText('');
 

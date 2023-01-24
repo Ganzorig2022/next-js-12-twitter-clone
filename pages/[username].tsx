@@ -30,6 +30,7 @@ const UserPage = (props: Props) => {
     axios.get(`/api/users?username=${username}`).then((res) => {
       setProfileInfo(res.data.user);
       setOriginalUserinfo(res.data.user);
+      setIsFollowing(!!res.data.follow); // !! --> data bwal TRUE
     });
   }, [username]);
 
@@ -63,7 +64,7 @@ const UserPage = (props: Props) => {
     setEditMode(false);
   };
 
-  //
+  // Follow and Unfollow request to mongoDB
   const toggleFollow = async () => {
     setIsFollowing((prev) => !prev);
     await axios.post('/api/followers', { destination: profileInfo?._id });

@@ -61,12 +61,7 @@ const Home = () => {
     <Layout>
       <h1 className='tet-xl font-bold p-4 text-white'>Home</h1>
       {/* Create a Post */}
-      <PostForm
-        onPost={fetchPosts}
-        parent=''
-        compact
-        placeholder={`What\'s happening`}
-      />
+      <PostForm onPost={fetchPosts} placeholder={`What\'s happening`} />
 
       {/* All Posts */}
       <div className=''>
@@ -87,7 +82,6 @@ const Home = () => {
       </div>
 
       {/* LOG OUT */}
-
       {userInfo && (
         <div className='p-5 text-center border-t border-twitterBorder'>
           <button

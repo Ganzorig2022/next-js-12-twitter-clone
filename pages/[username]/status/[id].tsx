@@ -1,11 +1,9 @@
 import axios from 'axios';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
+import useUserInfo from '../../../hooks/useUserInfo';
 import Layout from '../../../components/Layout';
 import PostContent from '../../../components/PostContent';
-import { ArrowLeftIcon } from '@heroicons/react/24/solid';
-import useUserInfo from '../../../hooks/useUserInfo';
 import PostForm from '../../../components/PostForm';
 import TopNavLink from '../../../components/TopNavLink';
 

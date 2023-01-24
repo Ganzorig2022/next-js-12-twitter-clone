@@ -92,7 +92,16 @@ https://next-auth.js.org/getting-started/typescript
 
 ## USER FOLLOW Functionality
 
-1. "/pages/[username].tsx"
+> Front-end
+
+1. "/pages/[username].tsx" dr front bichne.
+2. "api/follower" - ruu POST request yawuulna.
+
+> Back-end
+
+1. "/models/Follower.ts" dr schema uusgene.
+2. "/pages/api/followers.ts" dr back-end bichne.
+3. Herwee user tuhain hvniig omno ni follow hsen bol, dahiad follow request irwel remove hiine.
 
 ## DYNAMIC ROUTING
 
