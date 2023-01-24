@@ -3,7 +3,7 @@ import { useSession } from 'next-auth/react';
 
 type UserInfos = {
   email?: string;
-  id?: string;
+  _id?: string;
   username?: string;
   image?: string;
 };

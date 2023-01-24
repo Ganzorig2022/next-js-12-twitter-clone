@@ -47,6 +47,22 @@ Herwee Vercel dr deploy-dood linkeeree deploydson linkeeree orood Google-eer new
 1. deerh linkeer orood Credentials-rvvgee orood --> Authorised redirect URIs dr "https://next-js-12-twitter-clone.vercel.app/api/auth/callback/google" ene URL-iig zow zaaj ogno.
 2.
 
-## 8
+## 8 - DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7
 
 https://stackoverflow.com/questions/74747476/deprecationwarning-mongoose-the-strictquery-option-will-be-switched-back-to
+
+## 9 - Property does not exist on type '{}' in TypeScript [Error ts(2345)]
+
+> https://bobbyhadz.com/blog/typescript-property-does-not-exist-on-type
+
+1. Type guard method
+
+   ERROR --> const { bio, name, username }:User = originalUserInfo;
+
+   CORRECT --> const { bio, name, username } = originalUserInfo as User;
+
+## 10 -How to setState with an object in Typescript? [Error ts(2345)]
+
+> https://stackoverflow.com/questions/71791207/how-to-setstate-with-an-object-in-typescript-error-ts2345
+
+CORRECT --> setProfileInfo((prev) => ({ ...prev, bio, name, username } as User));

@@ -63,7 +63,9 @@ https://next-auth.js.org/getting-started/typescript
 4. "lib/mongoose.ts" dr mongoDB database-rvvgee holbogdono.
 5. "pages/login.tsx" dr next-auth-iin useSession()-eer newtersen hereglegchiin medeelliig barij awna.
 
-## Tweet Likes functionality (getting and updating likesCount on mongoDb)
+## TWEET LIKES functionality
+
+> getting and updating likesCount on mongoDb
 
 1. "/models/Like.ts" dr "Post, User" collection-toi holbono.
 2. "/models/Post.ts" dr hereglegchiin darsan like-nii toonii type-iig zaaj ogno.
@@ -78,7 +80,19 @@ https://next-auth.js.org/getting-started/typescript
 2. "/pages/[username].tsx" dr develop-iig ni hiiw.
 3. "/pages/[username].tsx"-ees GET request
 4. "/pages/api/users.ts" GET request-iin username-eer mongoDB-ees data butsaana.
-5.
+
+## USER PROFILE EDIT Functionality
+
+1. "/pages/[username].tsx" dr develop-iig ni hiiw.
+2. If logged userId is equal to userProfileId, then proceed...
+3. Toggle between "Save" and "Edit profile" buttons
+4. onChange-eer value-uudaa set-lene.
+5. "/api/profile" - ruu PUT request yawuulna.
+6. "/pages/api/profile.tsx" BACK-END-ee bichne.
+
+## USER FOLLOW Functionality
+
+1. "/pages/[username].tsx"
 
 ## DYNAMIC ROUTING
 
@@ -92,14 +106,17 @@ https://next-auth.js.org/getting-started/typescript
 npm i react-file-drop
 ```
 
-1. "/components/Cover.tsx" dr implement hiiw.
-2. "fetch('/api/upload') request yawuulna.
-3. "/pages/api/upload.ts" back-end-ee bichne.
-4. Installing multiparty package. File upload-iin request-iig back-end taldaa handle hiih zoriulalttai npm yum.
+1. "/components/Cover.tsx", "/components/Avatar.tsx" dr implement hiiw.
+2. "/components/EditableImage.tsx" dr REQUEST-ee yawuulna.
+3. "/api/upload"- ruu REQUEST yawuulna.
+4. "/pages/api/upload.ts" dr back-end-ee bichne.
+5. Installing multiparty package. File upload-iin request-iig back-end taldaa handle hiih zoriulalttai npm yum.
 
 ```bash
 npm i --save-dev @types/multiparty
 ```
+
+> Using AWS S3 service
 
 5. "/components/Cover.tsx" dotor image drag drop hiihed "/public" folder dotor hadgalagdana.
 6. SignUp to amazon web service.
@@ -116,6 +133,7 @@ npm install aws-sdk
 ```
 
 14. "/pages/api/upload.ts" dotor "S3Client" uusgene.
+15. asd
 
 ### Tailwind Theme Customizing
 

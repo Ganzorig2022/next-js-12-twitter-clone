@@ -22,6 +22,7 @@ interface User {
   username: string;
   _id: string;
   cover: string;
+  bio: string;
 }
 
 interface Posts {
